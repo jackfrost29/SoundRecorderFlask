@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Record</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src=" {{ url_for('static', filename='js/record.js') }} "></script>
+
+{% endblock %}
+
+{% block body %}
+
+<div id="bangla-sentence" _id="{{ _id }}" edited="false" style="font-family: 'Kalpurush', sans-serif; font-size: 25px;margin: 10px;">{{ sentence }}</div>
+
+<div>
+    <Button id="edit-button" onclick="edit_function()">Edit</Button>
+    <Button id="delete-button" onclick="delete_function()">Delete</Button>
+</div>
+
+<div style="margin: 5px;">
+    <audio id="audio-tag" type="audio/wav" controls="" recorded="false">Nothing has been recorder yet.</audio>
+</div>
+
+<div class="rocording-buttons">
+    <Button id="record-button">Record</Button>
+    <Button id="stop-button" disabled>Stop</Button>
+    <Button id="submit-button" disabled onclick="submit_function()">Submit</Button>
+</div>
+
+
+
+{% endblock %}
